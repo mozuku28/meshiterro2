@@ -5,16 +5,5 @@
         <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
     <% end %>
 </div>
-<section class="sct-color-1 slice">
-  <div class="container-fluid masonry-container">
-    <div class="row">
-      <div class="col-md-8 col-sm-offset-2">
-        <div class="masonry-wrapper-cols">
-            <% @post_images.each do |post_image| %>
-            <%= paginate @post_images, class: "pagenate" %>
-            <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+<%= render 'post_images/list', post_images: @post_images %>
